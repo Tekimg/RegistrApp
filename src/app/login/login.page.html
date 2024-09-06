@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1 class="header">Inicio de Sesión</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content class="ion-padding">
+      <form (submit)="login()">
+        <ion-item>
+          <ion-input [(ngModel)]="username" name="username" 
+          label="Usuario" labelPlacement="floating" placeholder="ej:PedroP"></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-input [(ngModel)]="password" name="password" 
+          type="password" label="Contraseña" labelPlacement="floating"></ion-input>
+        </ion-item>
+        
+        <ion-button expand="full" type="submit">Ingresar</ion-button>
+        <ion-button expand="full" fill="clear" [routerLink]="['/recover-pass']">Recuperar Contraseña</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
