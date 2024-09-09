@@ -9,14 +9,12 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-    username: string = '';
+    username: string='guest';
   
     constructor(private router: Router) {
       const navigation = this.router.getCurrentNavigation();
       if (navigation?.extras?.state) {
-        this.username = navigation.extras.state['username'];
+        this.username = navigation.extras.state['user'];
       }
     }
-  
-
-}
+  }

@@ -1,28 +1,39 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { LoginService } from '../services/login.service';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
-  username!: string ;
-  password!: string ;
+export class LoginPage implements OnInit  {
+  username: string='' ;
+  password: string='' ;
 
   constructor(
     private router: Router,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private loginService: LoginService
   ) { }
 
-  login() {
-    if (this.username && this.password) {
+  ngOnInit(){
+   
+      this.username = '';
+      this.password = '';  
+  }
+
+  validateLogin() {
+    if (
+      this.loginService.validateLogin(this.username, this.password)
+    ) {
       this.msgToast('Login correcto','success')
-      this.router.navigate(['/home'], { state: { username: this.username } }).then(() => {
-        this.username = '';
-        this.password = '';
-      })
+        let extras: NavigationExtras = {
+          state: { user: this.username }
+        }
+        this.router.navigate(['/home'], extras);
     } else {
       this.msgToast('Login fallido','danger');
     }
