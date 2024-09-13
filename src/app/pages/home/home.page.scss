@@ -1,0 +1,25 @@
+.header{
+  --text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:20px;
+}
+.cam{
+  padding: 50%;
+}
+.container{
+  margin: 5%;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+ion-toolbar{
+  background-color: var(--ion-color-mitema);
+  
+}
+.icono{
+font-size: 150%;
+}
+ion-button{
+  color: black;
+}

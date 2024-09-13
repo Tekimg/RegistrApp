@@ -13,7 +13,7 @@ export class LoginService {
   ];
   constructor() { }
   
-  validateLogin(u: string, p: string): boolean {
+  validarLogin(u: string, p: string): boolean {
     const found = this.users.find(user => user.username === u);
     if (found) {
       return found.password === p;

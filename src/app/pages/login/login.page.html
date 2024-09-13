@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="hdr1" color="mitema">
     <ion-title><h1 class="header">Inicio de sesión</h1></ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,7 +8,7 @@
   <div class="containercard">
     <ion-card>
       <ion-card-content style="margin: 5%;" class="ion-padding">
-        <form (submit)="validateLogin()">
+        <form (submit)="login()">
           <ion-item>
             <ion-input [(ngModel)]="username" name="username" 
             label="Usuario" labelPlacement="floating" placeholder="ej:PedroP"></ion-input>
@@ -18,9 +18,9 @@
             <ion-input [(ngModel)]="password" name="password" 
             type="password" label="Contraseña" labelPlacement="floating"></ion-input>
           </ion-item>
-          <br> 
-          <ion-button expand="full" type="submit">Ingresar</ion-button>
-          <ion-button expand="full" fill="clear" [routerLink]="['/recover-pass']">Recuperar Contraseña</ion-button>
+          <br> <br>
+          <ion-button color="mitema" class="btn1" expand="full" type="submit">Ingresar</ion-button>
+          <ion-button color="mitema" class="btn2" expand="full" fill="clear" [routerLink]="['/recover-pass']">Recuperar Contraseña</ion-button>
         </form>
       </ion-card-content>
     </ion-card>

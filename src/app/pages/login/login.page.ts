@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../../services/login.service';
 
 
 @Component({
@@ -25,17 +25,29 @@ export class LoginPage implements OnInit  {
       this.password = '';  
   }
 
-  validateLogin() {
+  login():boolean {
+
+    if(!this.username || !this.password){
+      this.msgToast('Todos los campos son obligatorios','tertiary');
+      return false;
+    }
+
+
     if (
-      this.loginService.validateLogin(this.username, this.password)
+      this.loginService.validarLogin(this.username, this.password)
     ) {
-      this.msgToast('Login correcto','success')
-        let extras: NavigationExtras = {
-          state: { user: this.username }
-        }
-        this.router.navigate(['/home'], extras);
+        this.msgToast('Login correcto','success');
+        
+      
+        localStorage.setItem('username',this.username);
+
+        localStorage.setItem('token','some-auth-token');
+        
+        this.router.navigate(['/home']);
+        return true;
     } else {
       this.msgToast('Login fallido','danger');
+      return false;
     }
   }
 

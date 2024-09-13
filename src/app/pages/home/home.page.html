@@ -1,0 +1,23 @@
+
+<ion-header >
+  <ion-toolbar class="hdr1" color="mitema">
+    <ion-title>
+      <h3 style="align-items: center;">Bienvenido, {{username}}!</h3>
+    </ion-title>
+    <ion-button slot="end" fill="clear" [routerLink]="['/login']"> 
+      <ion-icon  class="icono" name="log-out" ></ion-icon>  
+    </ion-button> 
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card class="container">
+      <ion-tab-button class="cam" >
+        <ion-icon  name="camera"></ion-icon>
+        <ion-label>Ingresar asistencia</ion-label>
+      </ion-tab-button>
+    </ion-card>
+  </div>
+</ion-content>
+<!--(click)="abrirCam()"-->

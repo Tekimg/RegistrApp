@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-    username: string='guest';
+    username!: string;
   
     constructor(private router: Router) {
       const navigation = this.router.getCurrentNavigation();
-      if (navigation?.extras?.state) {
-        this.username = navigation.extras.state['user'];
-      }
+    
+    }
+    ngOnInit(){
+      this.username = localStorage.getItem('username') || 'Invitado'; 
     }
   }
