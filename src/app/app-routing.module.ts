@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { authGuard } from './guards/auth.guard';
 
+
 const routes: Routes = [
+
+
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
@@ -21,6 +24,23 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'users',
+    loadChildren: () => import('./pages/users/users.module').then( m => m.UsersPageModule)
+  },
+
+
+
+  //redirigir paginas no encontradas - final del codigo
+  {
+    path: 'notfoundpage',
+    loadChildren: () => import('./pages/notfoundpage/notfoundpage.module').then( m => m.NotfoundpagePageModule)
+  },
+  {
+    path:'**', 
+    redirectTo:'notfoundpage'
+  },
+    
 ];
 
 @NgModule({
