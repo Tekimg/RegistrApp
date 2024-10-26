@@ -1,23 +1,44 @@
-.header{
-    --text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-.mainHeader{
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
 .containercard{
-  padding-top: 10%;
+  padding-top: 0%;
 }
-ion-toolbar {
-  background-color: var(--ion-color-mitema-shade);
+.header {
+  align-items: center; /* Centra verticalmente los elementos */
+}
+.hdr1 {
+  background-color: var(--ion-color-mitema);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; 
+}
+
+ion-title{
+  padding-top: 4%;
+  padding-bottom: 4%;
 }
 .btn1{
-  background-color: var(--ion-color-mitema);
+  background-color: var(--ion-color-mitema2);
+  color: var(--ion-color-mitema);
+  font-weight: 600;
 }
 .btn2{
   color: var(--ion-color-mitema);
+  font-weight: 500;
+}
+ion-button {
+  border-radius: 15px; 
+}
+.duoc{
+  font-family: 'Lato', sans-serif;
+  font-weight: bolder;
+  font-size: xx-large;
+  color:white;
+}
+
+img {
+  height: 30px; /* Ajusta la altura de la imagen según sea necesario */
+  width: 28px; /* Mantiene la proporción de la imagen */
+  padding-bottom: -10%;
+  background-color: transparent;
 }

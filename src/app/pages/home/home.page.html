@@ -1,11 +1,10 @@
-
 <ion-header >
   <ion-toolbar class="hdr1" color="mitema">
-    <ion-title>
-      <h3 style="align-items: center;">Bienvenido, {{username}}!</h3>
+    <ion-title >
+      <h3 class="wel-text">Bienvenido, <span style="color: #FFD100;">{{username}}</span>!</h3>
     </ion-title>
-    <ion-button slot="end" fill="clear" [routerLink]="['/login']"> 
-      <ion-icon  class="icono" name="log-out" ></ion-icon>  
+    <ion-button slot="end" fill="clear" (click)="logout()"> 
+      <ion-icon class="icono" name="log-out" ></ion-icon>  
     </ion-button> 
   </ion-toolbar>
 </ion-header>
@@ -14,13 +13,13 @@
   <div id="container">
     <ion-card class="container">
       <ion-tab-button class="cam" >
-        <ion-icon  name="camera"></ion-icon>
+        <ion-icon name="camera"></ion-icon>
         <ion-label>Ingresar asistencia</ion-label>
       </ion-tab-button>
     </ion-card>
   </div>
   <div class="container2">
-    <ion-button [routerLink]="['/users']">Lista de usuarios</ion-button>
+    <ion-button color="mitema2" class="btn" [routerLink]="['/users']">Alumnos presentes</ion-button>
   </div>
 </ion-content>
 <!--(click)="abrirCam()"-->

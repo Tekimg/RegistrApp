@@ -44,6 +44,8 @@ export class LoginPage implements OnInit  {
         localStorage.setItem('token','some-auth-token');
         
         this.router.navigate(['/home']);
+        this.username = '';
+        this.password = ''; 
         return true;
     } else {
       this.msgToast('Login fallido','danger');
@@ -51,6 +53,7 @@ export class LoginPage implements OnInit  {
     }
   }
 
+  
   async msgToast(message: string, color: string){
     const toast = await this.toastController.create({
       message: message,

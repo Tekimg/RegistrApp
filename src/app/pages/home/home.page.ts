@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HomePage {
 
     username!: string;
+    password!: string;
   
     constructor(private router: Router) {
       const navigation = this.router.getCurrentNavigation();
@@ -17,5 +18,11 @@ export class HomePage {
     }
     ngOnInit(){
       this.username = localStorage.getItem('username') || 'Invitado'; 
+    }
+    logout(){
+           
+      localStorage.removeItem('username');
+      this.router.navigate(['/login']);
+
     }
   }

@@ -1,35 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Usuarios</ion-title>
-    <ion-button  slot="end" routerLink="/home">Volver</ion-button>
+  <ion-toolbar color="mitema">
+    <ion-title>Lista de alumnos</ion-title>
+    <ion-button slot="end" fill="clear" routerLink="/home"> 
+      <ion-icon name="chevron-back" class="icono"></ion-icon>  
+    </ion-button> 
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Lista de usuarios</ion-card-title>
-    
-    </ion-card-header>
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <strong>Name</strong>
-          </ion-col>
-          <ion-col>
-            <strong>Email</strong>
-          </ion-col>
-        </ion-row>
-        <ion-row *ngFor="let user of users">
-          <ion-col>
-            {{ user.name }}
-          </ion-col>
-          <ion-col>
-            {{ user.email }}
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
+
+  <ion-list>
+    <ion-item class="header">
+      <ion-label>
+        <strong>Name</strong>
+      </ion-label>
+      <ion-label>
+        <strong>Email</strong>
+      </ion-label>
+    </ion-item>
+    <ion-item class="item1" *ngFor="let user of users">
+      <ion-label>
+        <span class="text">{{ user.name }}</span>
+      </ion-label>
+      <ion-label>
+        <span class="text">{{ user.email }}</span>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
