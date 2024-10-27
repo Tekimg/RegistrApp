@@ -26,14 +26,21 @@ ion-toolbar{
 }
 ion-button{
   border-radius: 15px;
+  //width: 40%;
 }
 
 .container2 {
   display: flex;
   justify-content: center;  
-  align-items: center;     
+  align-items: center;   
 }
 .btn{
   background-color: var(--ion-color-mitema2);
   color: var(--ion-color-mitema);
+}
+
+.containerqr { 
+  display: flex;
+  justify-content: center;  
+  align-items: center;  
 }

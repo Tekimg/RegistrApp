@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Escanear QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="scanner-container">
+    <h2>Escanea el QR</h2>
+
+    <ion-button expand="full" routerLink="/home">
+      Volver al Inicio
+    </ion-button>
+
+    <div *ngIf="scannedData">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Resultado del escaneo:</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{ scannedData }}
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Vista de la cámara -->
+     <video #video width="100%" height="auto"></video>
+  </div>
+</ion-content>
