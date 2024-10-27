@@ -12,7 +12,7 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <ion-card class="container">
-      <ion-tab-button class="cam" >
+      <ion-tab-button class="cam" routerLink="/escaneo-qr">
         <ion-icon name="camera"></ion-icon>
         <ion-label>Ingresar asistencia</ion-label>
       </ion-tab-button>
@@ -23,8 +23,6 @@
 
   </div>
 
-  <div class="containerqr"> 
-    <ion-button color="mitema2" class="btn" (click)="goToQrScan()">Escanear QR</ion-button> 
-  </div> 
+
 </ion-content>
 <!--(click)="abrirCam()"-->

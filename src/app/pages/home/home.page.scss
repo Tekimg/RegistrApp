@@ -18,7 +18,6 @@ ion-title{
 }
 ion-toolbar{
   background-color: var(--ion-color-mitema);
-  
 }
 .icono{
   font-size: 150%;
@@ -26,7 +25,13 @@ ion-toolbar{
 }
 ion-button{
   border-radius: 15px;
-  //width: 40%;
+  //Anim
+  --background-activated:var(--ion-color-mitema2-tint);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  &:active {
+      transform: scale(0.95);
+      background-color: var(--ion-color-primary-shade);
+  }
 }
 
 .container2 {
