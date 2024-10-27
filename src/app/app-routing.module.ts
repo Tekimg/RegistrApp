@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
     canActivate:[authGuard]
   },
+  { 
+    path: 'escaneo-qr',
+    loadChildren: () => import('./pages/escaneo-qr/escaneo-qr.module').then( m => m.EscaneoQrPageModule),
+  }, 
   {
     path: '',
     redirectTo: 'login',
@@ -40,6 +44,7 @@ const routes: Routes = [
     path:'**', 
     redirectTo:'notfoundpage'
   },
+
     
 ];
 
