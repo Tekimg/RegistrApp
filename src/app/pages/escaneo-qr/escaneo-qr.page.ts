@@ -26,7 +26,7 @@ export class EscaneoQrPage implements OnDestroy, AfterViewInit {
   }
 
   async startScan() {
-    console.log('Valor de video:', this.video); // Agrega este log
+    console.log('Valor de video:', this.video); 
 
 
     if (!this.video) {
