@@ -16,6 +16,11 @@ export class HomePage {
       const navigation = this.router.getCurrentNavigation();
     
     }
+
+    goToQrScan(){  
+      this.router.navigate(['/escaneo-qr']); 
+    } 
+
     ngOnInit(){
       this.username = localStorage.getItem('username') || 'Invitado'; 
     }
