@@ -1,4 +1,4 @@
-#Entrega 3
+# Entrega 3
 
 (Siempre actualizar diseño a Duoc)
 ####Lunes 4
@@ -13,7 +13,7 @@
 
 ___
 
-####Lunes 11
+#### Lunes 11
 4.1 CRUD perfil de usuario (Eliminar, update) (Alex)
   Implementar crud al perfil de usuario, con opciones de eliminar usuario y actualizar datos
   
@@ -28,7 +28,7 @@ ___
 
 ___
 
-####Lunes 18
+#### Lunes 18
 3. Generacion de APK(intento 1)
   Generar apk de la aplicacion
   
@@ -43,7 +43,7 @@ ___
 
 ___
 
-####Lunes 25
+#### Lunes 25
 3. Generacion de APK(intento 2 en caso de no tenerla en la anterior)
   Generar apk de la aplicacion
   
@@ -52,7 +52,7 @@ ___
 
 ___
 
-###Dic 2 Final
+### Dic 2 Final
 9. API Santoral en HomePage (api.boostr.cl/santorales) (Hernán)
   Implementar una api para mostrar los santos del día
 
