@@ -3,6 +3,10 @@
     <ion-title >
       <h3 class="wel-text">Bienvenido, <span style="color: #FFD100;">{{username}}</span>!</h3>
     </ion-title>
+    <ion-button slot="end" fill="clear" color="light" [routerLink]="['/userprofile']">
+      <ion-icon name="person" slot="start"></ion-icon>
+      Perfil
+    </ion-button>
     <ion-button slot="end" fill="clear" (click)="logout()"> 
       <ion-icon class="icono" name="log-out" ></ion-icon>  
     </ion-button> 

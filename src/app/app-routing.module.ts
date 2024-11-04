@@ -33,6 +33,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/users/users.module').then( m => m.UsersPageModule)
   },
 
+  {
+    path: 'userprofile',
+    loadChildren: () => import('./pages/userprofile/userprofile.module').then(m => m.UserProfilePageModule)
+  },
+
+
 
 
   //redirigir paginas no encontradas - final del codigo
@@ -43,7 +49,8 @@ const routes: Routes = [
   {
     path:'**', 
     redirectTo:'notfoundpage'
-  },  {
+  },
+  {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
