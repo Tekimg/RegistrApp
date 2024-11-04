@@ -1,0 +1,46 @@
+.cam{
+    padding: 50%;
+  }
+  
+  ion-title{
+    text-align: left; 
+    display: flex;
+    justify-content: flex-start; 
+    padding-left: 5%;
+  }
+  .wel-text{
+    white-space: wrap;
+  }
+  .container{
+    margin: 5%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+  ion-toolbar{
+    background-color: var(--ion-color-mitema);
+    
+  }
+  .icono{
+    font-size: 150%;
+    color: white;
+  }
+  ion-button{
+    border-radius: 15px;
+    //width: 40%;
+  }
+  
+  .container2 {
+    display: flex;
+    justify-content: center;  
+    align-items: center;   
+  }
+  .btn{
+    background-color: var(--ion-color-mitema2);
+    color: var(--ion-color-mitema);
+  }
+  
+  .containerqr { 
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+  }
