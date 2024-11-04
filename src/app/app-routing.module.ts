@@ -50,10 +50,6 @@ const routes: Routes = [
     path:'**', 
     redirectTo:'notfoundpage'
   },
-  {
-    path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
-  },
 
 
     
