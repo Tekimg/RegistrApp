@@ -1,6 +1,7 @@
 import { Component, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { BrowserMultiFormatReader } from '@zxing/browser';
 import { AlertController } from '@ionic/angular';
+import { LoadingService } from 'src/app/loading.service';
 
 @Component({
   selector: 'app-escaneo-qr',
@@ -14,7 +15,7 @@ export class EscaneoQrPage implements OnDestroy, AfterViewInit {
   scanning: boolean = false; 
   scanningSpace:boolean=true;
 
-  constructor(private alertController: AlertController) {
+  constructor(private alertController: AlertController, private loadingService: LoadingService) { // Se agregó el loadingService
     this.codeReader = new BrowserMultiFormatReader();
   }
 
@@ -26,6 +27,10 @@ export class EscaneoQrPage implements OnDestroy, AfterViewInit {
   }
 
   async startScan() {
+    this.loadingService.show(); // Muestra el mensaje de loading
+    await new Promise(resolve => setTimeout(resolve, 500)); // Simula un proceso largo
+    // Acá va la lógica del escaneo v
+    this.loadingService.hide(); // Oculta el mensaje de loading
     console.log('Valor de video:', this.video); 
 
 
