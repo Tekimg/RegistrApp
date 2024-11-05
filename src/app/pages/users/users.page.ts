@@ -10,18 +10,8 @@ export class UsersPage implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.getUser();
+   
   }
 
- getUser(){
-    this.apiService.getUsers().subscribe(
-    (data) => {
-      this.users = data;  // Asignar los datos recibidos a la variable users
-      console.log(this.users);  // Imprimir los datos en la consola
-    },
-    (error) => {
-      console.error('Error al obtener los usuarios', error);  // Manejo de errores
-    })
-  }
 
 }
