@@ -17,8 +17,8 @@ ___
 8. Implementar API Ubicación(Alex)
 Implementar API de ubicación para sig tarea 8.1 
 
-5.1 Implementacion API Rest en autenticación de usuario + registro de usuario (CREATE)(Josefina)
-  Utilizar api rest en para autenticar login y base para la página registro de usuario y crear html de un formulario de registro de usuario, conectado al api rest para guardar la informacion del nuevo usuario
+5.1 Implementacion API a través de firebase en autenticación de usuario + registro de usuario (CREATE)+4.2 NgFor informacion perfil de usuario API (Josefina)
+  Utilizar api + firebase en para autenticar login y base para la página registro de usuario y crear html de un formulario de registro de usuario, conectado al api rest para guardar la informacion del nuevo usuario.  Crear la iteración de los datos del usuario autenticado
   
 10. Lector QR segun string en formato (MDY4121|012D|L8|30102024) (Hernán)
   Implementar que los string que se lean, en el formato requerido, se guarden en variables separada para despues utilizarlas
@@ -29,8 +29,8 @@ ___
 8.1 Validación ubicación (Alex)
   validar que al registrar la asistencia se encuentre dentro del recinto
 
-4.1 CRUD perfil de usuario (Eliminar, update)+4.2 NgFor informacion perfil de usuario API (Josefina)
-  Crear la iteración de los datos de usuarios registrados en la API rest + implementar crud al perfil de usuario, con opciones de eliminar usuario y actualizar datos
+4.1 CRUD perfil de usuario (Eliminar, update)(Josefina)
+  implementar crud al perfil de usuario, con opciones de eliminar usuario y actualizar datos
 
 2. Confirmacion de acciones críticas (mensajes) (Hernan)
    Popup de confirmación para acciones criticas (eliminar usuario, entre otros que se consideren necesarios)
