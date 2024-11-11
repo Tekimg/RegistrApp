@@ -7,14 +7,24 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginService } from './services/login.service';
-import { HttpClientModule } from '@angular/common/http';
 import { LoadingComponent } from './loading/loading.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent, LoadingComponent],
-  imports: [HttpClientModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule],
-  providers: [LoginService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, CommonModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()), 
+    provideAnalytics(() => getAnalytics()), 
+    ScreenTrackingService, UserTrackingService,
+    provideFirestore(() => getFirestore()), 
+    provideStorage(() => getStorage())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
