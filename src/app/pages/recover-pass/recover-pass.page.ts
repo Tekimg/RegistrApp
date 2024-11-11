@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
@@ -15,14 +14,13 @@ export class RecoverPassPage implements OnInit {
   userFound: boolean = false; 
 
   constructor(
-    private loginService: LoginService,
     private toastController: ToastController,
     private router: Router
   ) {}
 
   ngOnInit() {}
 
-
+/*
   findUser() {
     const found = this.loginService.findUserByUsername(this.username);
     if (found) {
@@ -45,7 +43,7 @@ export class RecoverPassPage implements OnInit {
     } else {
       this.msgToast('Ingrese una contraseña','danger');;
   }}
-
+*/
   async msgToast(message: string, color: string){
     const toast = await this.toastController.create({
       message: message,

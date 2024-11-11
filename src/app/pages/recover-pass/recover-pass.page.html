@@ -11,14 +11,15 @@
           <ion-input [(ngModel)]="username" label="Usuario" labelPlacement="floating"></ion-input>
         </ion-item>
         <br>
-        <ion-button color="mitema" class="btn1" expand="full" (click)="findUser()">Buscar Usuario</ion-button>
+        <!--<ion-button color="mitema" class="btn1" expand="full" (click)="findUser()">Buscar Usuario</ion-button>-->
         <ion-button color="mitema2" class="btn2" expand="full" fill="clear" [routerLink]="['/login']" >Volver a login</ion-button>
         <div *ngIf="userFound">
           <ion-item>
             <ion-input label="Nueva Contraseña" labelPlacement="floating" [(ngModel)]="newPass" type="password" required></ion-input>
           </ion-item>
           <br>
-          <ion-button color="mitema" class="btn3" expand="full" (click)="updatePass()">Actualizar Contraseña</ion-button>
+          
+          <!--<ion-button color="mitema" class="btn3" expand="full" (click)="updatePass()">Actualizar Contraseña</ion-button>-->
         </div>
       </ion-card-content>
     </ion-card>
