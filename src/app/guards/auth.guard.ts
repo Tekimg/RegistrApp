@@ -1,13 +1,25 @@
-import { CanActivateFn, Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
-export const authGuard: CanActivateFn = (route, state) => {
-const router = new Router();
-const isLoggedIn = !!localStorage.getItem('token')
+@Injectable({
+  providedIn: 'root'
+})
+export class authGuard implements CanActivate {
 
-if(!isLoggedIn) {
-  router.navigate(['/login']);
-  return false;
+  constructor(private router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean> | Promise<boolean> | boolean {
+    const isLoggedIn = !!localStorage.getItem('token');
+    console.log("Está logeado?", isLoggedIn);
+
+    if (!isLoggedIn) {
+      this.router.navigate(['/login']); // Redirige al login si no está logueado
+      return false;
+    }
+    return true;
+  }
 }
-  return true;
-  
-};

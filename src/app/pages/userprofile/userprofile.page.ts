@@ -1,31 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
-import { LoginService } from 'src/app/services/login.service';
-import { __await } from 'tslib';
-
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-userprofile',
   templateUrl: './userprofile.page.html',
   styleUrls: ['./userprofile.page.scss'],
 })
-export class UserprofilePage {
-  constructor(private loginService: LoginService) {}
+export class UserprofilePage implements OnInit {
+  users: User[] = [];
+  currentUser: User | null = null;  
 
- userData?: User;
-isUserDataLoaded = false; // Nueva propiedad
+  constructor(private firebaseService: FirebaseService) {}
 
-ngOnInit() {
-  this.obtenerDatosUsuario();
-}
-
-obtenerDatosUsuario() {
-  const user = this.loginService.validaUser('Pedrito');
-  if (user) {
-    this.userData = user;
-    this.isUserDataLoaded = true; // Cambia a true una vez que los datos están listos
-  } else {
-    console.log('Usuario no encontrado');
+  ngOnInit() {
+    this.loadUsers();
   }
-}
+
+  // Cargar usuarios 
+  loadUsers() {
+    this.firebaseService.getCollectionChanges<User>('Users').subscribe(data => {
+      if (data) {
+        this.users = data; 
+        console.log('Usuarios cargados desde Firebase:', this.users);
+
+        // Recuperar el email d
+        const storedEmail = localStorage.getItem('credenciales');
+        
+        if (storedEmail) {
+          const credenciales = JSON.parse(storedEmail);
+          const email = credenciales.email;
+
+          this.filterUserByEmail(email);
+        }
+      }
+    });
+  }
+
+  // Función para filtrar
+  filterUserByEmail(email: string) {
+    const user = this.users.find(u => u.email === email);
+    
+    if (user) {
+      this.currentUser = user;
+      console.log('Usuario filtrado:', this.currentUser);
+    }
+  }
 }
