@@ -26,8 +26,8 @@ Implementar API de ubicación para sig tarea 8.1
 ___
 
 ### Lunes 18
-8.1 Validación ubicación (Alex)
-  validar que al registrar la asistencia se encuentre dentro del recinto
+8 Implementar API Ubicación + 8.1 Validación ubicación (Alex)
+  Implementar API de ubicación + validar que al registrar la asistencia se encuentre dentro del recinto
 
 4.1 CRUD perfil de usuario (Eliminar, update)(Josefina)
   implementar crud al perfil de usuario, con opciones de eliminar usuario y actualizar datos
