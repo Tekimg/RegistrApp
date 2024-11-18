@@ -41,8 +41,8 @@ ___
 3. Generacion de APK (Alex)
   Generar apk de la aplicacion
   
-5.2 Recuperación de contraseña (Usuario + numero cel) (Josefina)
-  Utilizar api rest para la recuperación de contraseña. Al ingresar el numero de celular correcto al usuario, se mostrara el campo para cambiar su contraseña
+5.2 Recuperación de contraseña via email (Josefina)
+  Generar html para enviar el correo al email y recuperar la contraseña de firebase
 
 7. Cambiar "Alumnos presentes" a "Mis asistencias", ingresando los datos que se leyeron en el qr (Hernán)
   Modificar html al nuevo concepto y utilizar las variables anteriormente guardadas al leer el qr
