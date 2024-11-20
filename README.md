@@ -47,6 +47,8 @@ ___
 7. Cambiar "Alumnos presentes" a "Mis asistencias", ingresando los datos que se leyeron en el qr (Hernán)
   Modificar html al nuevo concepto y utilizar las variables anteriormente guardadas al leer el qr
 
+n. Relacionar datos escaneados al usuario autenticado mediante colecciones de firebase (Josefina y Hernan)
+  Guardar los datos escaneados por el usuario en su sesión, con colecciones y documentos de firebase 
 ___
 
 ## Dic 2 Final
