@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-userprofile',
@@ -9,12 +10,30 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class UserprofilePage implements OnInit {
   users: User[] = [];
-  currentUser: User | null = null;  
+  currentUser: User | null = null;
+  alertButtons: any = [];
 
-  constructor(private firebaseService: FirebaseService) {}
+
+  constructor(private firebaseService: FirebaseService, private alertController: AlertController) {}
 
   ngOnInit() {
     this.loadUsers();
+
+    this.alertButtons = [
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancelado');
+        }
+      },
+      {
+        text: 'Ok',
+        handler: () => {
+          console.log('Ok presionado');
+        }
+      }
+    ];
   }
 
   // Cargar usuarios 

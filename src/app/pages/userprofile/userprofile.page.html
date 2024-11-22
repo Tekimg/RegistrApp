@@ -52,4 +52,13 @@
   <ng-template #noData>
     <p>No hay datos del usuario disponible.</p>
   </ng-template>
+
+  <ion-button id="present-alert" class="red-button">Borrar usuario</ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="Confirmar Eliminación"
+    subHeader="Esta acción no se puede deshacer."
+    message="¿Estás seguro que deseas eliminar este usuario?"
+    [buttons]="alertButtons"
+  ></ion-alert>
 </ion-content>
